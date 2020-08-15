@@ -50,6 +50,9 @@ The source will be git@github.com:psu-ds410/ds410-hw-[github username].git and y
 
 Once you have cloned a repository, you don't need to clone it again (unless you deleted it from your computer).
 
+**Important** you can also access your repository on the web: https://github.com/psu-ds410/ds410-hw-[your github username]
+which is useful because it shows the contents of your remote repository.
+
 ## Staging files (git status and git add)
 
 Let's say I edited some files such as hello.py and world.py. These files need to be staged. This can be done by typing
@@ -77,6 +80,10 @@ Committing a your changes only updates your file history on your local machine. 
 
 ## Pulling updates (git pull)
 
-
+If you have clones of your repositories on different computers, some of them will be out of date. Use ```git pull origin master``` to download the latest changes into your local repository. It is a good idea to git pull before git push.
 
 ## Merging conflicts (merge)
+
+Sometimes the changes you pull will conflict with what is on your local repository. For example, 
+* on computer 1, you edit hello.py, commit it, then **git push**.
+* on computer 2, you then edit hello.py in a different way and commit it. These changes could potentially conflict with the changes in computer 1. Git will not allow you to push this changes directly. It will instruct you to first **git pull** so that the changes you pushed from computer 1 are downloaded onto computer 2. You will then need to edit hello.py on computer 2 to merge in those changes. Finally, you will git add, commit, push the merged changes.
