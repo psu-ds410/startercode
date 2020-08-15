@@ -87,3 +87,48 @@ If you have clones of your repositories on different computers, some of them wil
 Sometimes the changes you pull will conflict with what is on your local repository. For example, 
 * on computer 1, you edit hello.py, commit it, then **git push**.
 * on computer 2, you then edit hello.py in a different way and commit it. These changes could potentially conflict with the changes in computer 1. Git will not allow you to push this changes directly. It will instruct you to first **git pull** so that the changes you pushed from computer 1 are downloaded onto computer 2. You will then need to edit hello.py on computer 2 to merge in those changes. Finally, you will git add, commit, push the merged changes.
+
+Here is an example of what you might see when there is a merge conflict. Open the file that has a conflict (hello.py). You will see something like this:
+```
+def greet():
+    print("hello world")
+
+<<<<<<< HEAD
+def new_function_in_local_repository():
+    return 1+1==2
+=======
+def new_function_in_remote_repository():
+    pass
+>>>>>>> 3a46f859a1a76724972a9e54e3b14b9d7c9dcd59
+
+if __name__ == "__main__":
+    greet()
+```
+The code in between <<<<<<< HEAD and ======= is the code in my local repository that is not in the remote (on github.com). The code in between ======= and >>>>>>> 3a46f859a1a76724972a9e54e3b14b9d7c9dcd59
+is the code that is in the remote repository but I did not have locally. 
+
+It is your decision on how to fix this conflict. Here, I might decide that I want to keep both functions, so I will edit the file to look like this:
+
+```
+def greet():
+    print("hello world")
+
+def new_function_in_local_repository():
+    return 1+1==2
+
+def new_function_in_remote_repository():
+    pass
+
+if __name__ == "__main__":
+    greet()
+```
+then I will stage and commit:
+```
+git add hello.py
+git commit -m "merged hello.py"
+git push
+```
+
+## git branches
+
+Branches are a useful part of git, especially when collaborating on a team. A typical workflow is to create a branch, add a new feature to your code, test it, commit the branch, and then merge it onto the master branch. To learn about branching, the linked book at the start of this section is a good place to start.
