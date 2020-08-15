@@ -13,7 +13,7 @@ This will allow you to receive updates to this repository. If you are not using 
 # Updates
 
 Whenever you are notified to update the starter code, type the following in a linux shell:
-```source ./updatestater```
+```source ./updatestarter```
 This will pull the updates from the startercode repository. If you are not using linux, type the following into the git shell:
 ```git pull staff master --allow-unrelated-histories```
 These actions may require you to merge any conflicts (so make sure you are familiar with the git instructions later in this README file).
