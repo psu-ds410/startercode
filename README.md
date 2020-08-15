@@ -73,7 +73,7 @@ Make the commit message informative to describe what your recent file edits did.
 
 Committing a your changes only updates your file history on your local machine. In order to save it on the github servers, you need to push the changes using
 ``` git push origin master```
-(sometimes just typing **git push** is enough)
+(sometimes just typing ```git push``` is enough)
 
 ## Pulling updates (git pull)
 
