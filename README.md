@@ -52,10 +52,10 @@ The command is
 
 ```git clone [source] [destination]```
 
-For this course, your repository will be created after you accept the assignment at https://classroom.github.com/a/BxfdfYPH .
-The source will be git@github.com:psu-ds410/ds410-hw-[github-username].git and you can use ds410-hw as the destination. For example, I would clone the homework repository as:
+For this course, your repository will be created after you accept the assignment at https://classroom.github.com/a/7sRIyCLq .
+The source will be https://github.com/psu-ds410/ds410-hw-[github-username].git and you can use ds410-hw as the destination. For example, I would clone the homework repository as:
 
-```git clone git@github.com:psu-ds410/ds410-hw-dkifer.git ds410-hw```
+```git clone https://github.com/psu-ds410/ds410-hw-dkifer.git ds410-hw```
 
 (obviously you need to change this a little since your github user name is different than mine).
 
