@@ -61,7 +61,7 @@ The source will be https://github.com/psu-ds410/ds410-hw-[github-username].git a
 
 Once you have cloned a repository, you don't need to clone it again (unless you deleted it from your computer).
 
-**Important** you can also access your repository on the web: https://github.com/psu-ds410/ds410-hw-[your github-username]
+**Important** you can also access your repository on the web: https://github.com/psu-ds410/ds410-hw-[your-github-username]
 which is useful because it shows the contents of your remote repository.
 
 ## Staging files (git status and git add)
