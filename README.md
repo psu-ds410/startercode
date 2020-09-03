@@ -13,7 +13,7 @@ The first time you clone a github classroom repository, type the following in a 
 
 This will allow you to receive updates to this repository. If you are not using linux, type the following into the git shell:
 
-```git remote add staff git@github.com:psu-ds410/startercode```
+```git remote add staff2 https://github.com/psu-ds410/startercode```
 
 # Updates
 
@@ -23,7 +23,7 @@ Whenever you are notified to update the starter code, type the following in a li
 
 This will pull the updates from the startercode repository. If you are not using linux, type the following into the git shell:
 
-```git pull staff master --allow-unrelated-histories```
+```git pull staff2 master --allow-unrelated-histories```
 
 These actions may require you to merge any conflicts (so make sure you are familiar with the git instructions later in this README file).
 
