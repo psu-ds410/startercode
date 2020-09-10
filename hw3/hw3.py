@@ -24,15 +24,14 @@ def sortfile(f: str) -> List[str]:
     return words
 
 
-def mergesort(file_list: List[str]) -> Tuple[Any, List[str]]:
+def mergesort(file_list: List[str]) ->  List[str]:
     """ Performas a parallelized merge sort with branching factor 2 over the files in file_list 
     
     Input: 
        file_list: list of file names
 
     Output:
-       a tuple. The first part of the tuple is the delayed object for the computation, the second part is a list
-       of the sorted words
+       the list of the sorted words
 
     Note:
        you must use the futures api and merge files as results become available
