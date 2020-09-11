@@ -13,7 +13,8 @@ import re
 
 def tokenize(line: str) -> List[str]:
     """ Splits a line into words """
-    return re.split("\W+", line.strip())
+    trimmed = line.strip()
+    return re.split("\W+", trimmed) if trimmed else []
 
 
 def sortfile(f: str) -> List[str]:

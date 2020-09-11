@@ -13,7 +13,8 @@ import re
 
 def tokenize(line: str) -> List[str]:
     """ Splits a line into words """
-    return re.split("\W+", line.strip())
+    trimmed = line.strip()
+    return re.split("\W+", trimmed) if trimmed else []
 
 
 def count_them(word_list: List[str], file_list: List[str]) -> Dict[str, int]:
