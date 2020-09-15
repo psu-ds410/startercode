@@ -1,23 +1,20 @@
-# I collaborated with:
-#
-# 1)
-# 2) 
-# ...
-#
+# Author: Anikate Ganju
+#Date due: 9/15/2020
 
-
+import dask
 from dask import delayed
 from dask.distributed import Client
-from typing import List, Dict, Tuple, Any
+import typing
 import re
 
-def tokenize(line: str) -> List[str]:
+#@delayed
+def tokenize(line: str) -> typing.List[str]:
     """ Splits a line into words """
     trimmed = line.strip()
     return re.split("\W+", trimmed) if trimmed else []
 
 
-def count_them(word_list: List[str], file_list: List[str]) -> Dict[str, int]:
+def count_them(word_list: typing.List[str], file_list: typing.List[str]) -> typing.Dict[str, int]:
     """ Returns a dictionary of {word: count}
     
     Input:
@@ -29,10 +26,15 @@ def count_them(word_list: List[str], file_list: List[str]) -> Dict[str, int]:
        is the number of times that word appears in all of the files.
 
     """
-    pass
+    #with Client(n_workers=4) as c:
+        #for i in file_list:
+            #open(file_list[i],'r')
+            #read file
+            #tokenize the stringfile
 
 
-def sortfile(f: str) -> List[str]:
+
+def sortfile(f: str) -> typing.List[str]:
     """ Returns an array consisting of the sorted words in f"""
     with open(f, "r") as infile:
         words = [word for line in infile.readlines() for word in tokenize(line)]
@@ -40,7 +42,7 @@ def sortfile(f: str) -> List[str]:
     return words
 
 
-def mergesort(file_list: List[str]) -> Tuple[Any, List[str]]:
+def mergesort(file_list: typing.List[str]) -> typing.Tuple[typing.Any, typing.List[str]]:
     """ Performas a parallelized merge sort with branching factor 2 over the files in file_list 
     
     Input: 
@@ -51,3 +53,17 @@ def mergesort(file_list: List[str]) -> Tuple[Any, List[str]]:
        of the sorted words
     """
     pass
+
+#file1=open('C:\Users\anika\Desktop\DS410\startercode\hw2\data_files\part-00000', 'r')
+file1=open('part-00000','r')
+#file2=open('C:\Users\anika\Desktop\DS410\startercode\hw2\data_files\part-00001', 'r')
+file2=open('part-00001','r')
+#file3=open('C:\Users\anika\Desktop\DS410\startercode\hw2\data_files\part-00002', 'r')
+file3=open('part-00002','r')
+#file4=open('C:\Users\anika\Desktop\DS410\startercode\hw2\data_files\part-00003', 'r')
+file4=open('part-00003','r')
+filelist=[file1,file2,file3,file4]
+a=file1.read()
+print(a)
+print(file1.tokenize())
+
