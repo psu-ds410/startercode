@@ -28,7 +28,7 @@
 
 
 
-# 6. Display information about the filesize in blocks, replication information, 
+# 6. Display information about the filesize in bytes, replication information, 
 # user name of the file owner, and modification date for the part-00001 file
 # that you earlier put in HDFS
 
