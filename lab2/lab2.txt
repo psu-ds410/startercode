@@ -1,0 +1,36 @@
+# I collaborated with:
+#
+# 1) 
+# 2)
+# 3)
+# ...
+#
+
+
+# 1. create a directory lab2_hdfs in your HDFS home directory
+
+
+
+# 2. upload the files part-00000 through part-00003 into that directory 
+# (you can find them on canvas)
+
+
+
+# 3. move these files to a new HDFS directory called lab2_words
+
+
+
+# 4. delete the lab2_hdfs directory
+
+
+
+# 5. Display the last 1kb of the part-00002 file that you earlier put in HDFS
+
+
+
+# 6. Print information about the filesize in blocks, replication information, 
+# user name of the file owner, and modification date for the part-00001 file
+# that you earlier put in HDFS
+
+
+
