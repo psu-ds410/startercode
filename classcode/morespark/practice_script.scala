@@ -73,6 +73,18 @@ def joinExample(sc: SparkContext):Unit = {
     showIt(joined)
 }
 
+def aggregateByKeyExample(sc: SparkContext):Unit = {
+    val fb = facebookRDD(sc)
+    //we want to compute, for each node, the number of neighbors and total sum of the neighbor ids
+    val comb = fb.aggregateByKey((0, 0))({ 
+                                           case ((thecount, thesum), neighbor) => (thecount+1, thesum + neighbor)
+                                         },
+                                         {
+                                           case ((count1, sum1), (count2, sum2)) => (count1 + count2, sum1+sum2)
+                                         })
+    showIt(comb)
+
+}
 
 def aggregateExample(sc: SparkContext):Unit = {
     val fb = facebookRDD(sc)
@@ -105,15 +117,3 @@ def reduceExample(sc: SparkContext):Unit = {
 
 
 
-def aggregateByKeyExample(sc: SparkContext):Unit = {
-    val fb = facebookRDD(sc)
-    //we want to compute, for each node, the number of neighbors and total sum of the neighbor ids
-    val comb = fb.aggregateByKey((0, 0))({ 
-                                           case ((thecount, thesum), neighbor) => (thecount+1, thesum + neighbor)
-                                         },
-                                         {
-                                           case ((count1, sum1), (count2, sum2)) => (count1 + count2, sum1+sum2)
-                                         })
-    showIt(comb)
-
-}
