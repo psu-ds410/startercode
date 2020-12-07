@@ -1,11 +1,11 @@
+# Author: Anikate Ganju
+# Date: 9/10/2020
+# Assignment: Dask Lab 1
 # I collaborated with:
-#
-# 1)
-# 2)
-# 3)
-# 4)
-# ...
-
+# 1)no one
+# ............
+import dask
+import graphviz
 from dask import delayed
 from typing import List
 import time
@@ -45,4 +45,40 @@ def go(myarray: List[float], branch_factor: int):
        should return the same graph as in the assignment writeup.
 
     """
-    pass
+
+    def group(list, n):
+        newlist = []
+        for i in range(0, len(list), n):
+            a = list[i:(i + n)]
+            newlist.append(a)
+        return newlist
+
+    inclist=[]
+    le=len(myarray)
+    for i in range(le):
+        x=myarray[i]
+        y=increment(x)
+        inclist.append(y)
+    #inclist=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+    hi=inclist
+    grp=[]
+    while len(hi)>1:
+        hi=group(hi,branch_factor)
+        #print("Grouped: ", hi)
+        hilen=len(hi)
+        for i in range(0,hilen):
+            a=hi[i]
+            b=addthem(a)
+            hi[i]=b
+        print(hi)
+
+    #hi=dask.persist(hi)
+    print(hi[0].compute())
+    return hi[0]
+
+
+
+
+delayed_object = go ([0 ,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10] , 3)
+delayed_object.visualize(filename='tree.png')
